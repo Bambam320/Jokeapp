@@ -1,0 +1,50 @@
+body {
+    background-color: #499c5f;
+    font-family: "Monaco";
+    position: relative;
+}
+
+u {
+    font-size: 20px;
+    font-style: bold
+}
+
+.listing {
+    background-color: wheat;
+    position: absolute;
+    top: 80px;
+    left: 220px;
+}
+
+.left-form{
+    background-color: #f2fa82;
+    width: 200px;
+    height: 1200px;
+    position: relative;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.selection {
+    text-align: left;
+    position: relative;
+    left: 40px;
+    top: 10px;
+}
+
+.search-bar {
+    background-color: #f2fa82;
+    width: 1000px;
+    height: 55px;
+    position: absolute;
+    padding-top: 6px;
+    padding-left: 10px;
+    left: 220px;
+    text-align: left;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.form-input {
+    background-color: #e7f5c6;
+    margin: 10px;
+}

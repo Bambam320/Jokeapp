@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Joke Finder</title>
+    <link rel="stylesheet" href="index.css" />
+    <script defer src="src/index.js"></script>  
+  </head>
+<body>
+    <form class="search-bar">
+        <label for="search-bar"> Search Bar</label><br>
+        <input size ="110" type="text" placeholder="Search for a joke with specific wording!"></input>
+        <input id="word-search" type="button" value = "Search"></input>
+    </form>
+    <form class = "left-form"> 
+        <h2>Get Ready To Laugh! <br> Shmaybe...</h2>
+        <u> Select Category </u><br>
+        <div class="selection">
+            <input type="checkbox" id="programmingctg"></input>
+            <label for="programmingctg"> Programming </label><br>
+            <input type="checkbox" id="punctg"></input>
+            <label for="punctg"> Puns </label><br>
+            <input type="checkbox" id="miscellaneousctg"></input>
+            <label for="miscellaneousctg"> Miscellaneous </label><br>
+            <input type="checkbox" id="Spookyctg"></input>
+            <label for="Spookyctg"> Spooky </label><br>
+            <input type="checkbox" id="darkctg"></input>
+            <label for="darkctg"> Dark </label><br>
+            <input type="checkbox" id="christmasctg"></input>
+            <label for="christmasctg"> Christmas </label><br>
+        </div><br>
+        <u> Select Style </u><br>
+        <div class="selection">
+            <input name= "style" type="radio" id="singlestyle"></input>
+            <label for="singlestyle"> Without a Reply </label><br>
+            <input name= "style" type="radio" id="doublestyle"></input>
+            <label for="doublestyle"> With a Reply </label><br>
+        </div><br>
+        <u> Select Flags </u><br>
+        <div class="selection">
+            <input type="checkbox" id="religiousflag"></input>
+            <label for="religiousflag"> Religious </label><br>
+            <input type="checkbox" id="politicalflag"></input>
+            <label for="politicalflag"> Political </label><br>
+            <input type="checkbox" id="racistflag"></input>
+            <label for="racistflag"> Racist </label><br>
+            <input type="checkbox" id="sexistflag"></input>
+            <label for="sexistflag"> Sexist </label><br>
+            <input type="checkbox" id="explicitflag"></input>
+            <label for="explicitflag"> Explicit </label><br>
+            <input type="checkbox" id="nsfwflag"></input>
+            <label for="nsfwflag"> NSFW </label><br>
+        </div><br>
+        <label for="jokeqty"> Quantity of Jokes </label>
+        <select id="qty-dropdown" name="jokeqty">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select><br><br>
+        <button id="main-search"> Submit Search </button>
+    </form>
+    <div class='listing'>
+        Listings will populate here
+    </div>
+ 
+  </body>
+
+
+  $( "#myselect option:selected" ).text();
