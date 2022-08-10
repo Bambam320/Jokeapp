@@ -1,15 +1,15 @@
 # Joke Search App
 
-This is a single page application that allows you to freely search for jokes based on several filters. You can save your favorite
-jokes and search for more jokes based on your favorites.
+This is a single page application that allows the user to search for jokes based on several filters
+including category, style, flags and quantity. There is a search bar that takes keywords and returns
+jokes that contain text that matches. The user can save especially good jokes in a favorites folder
+and the contents of the folder can be filtered or deleted.
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
-
-```bash
-pip install foobar
-```
+The app is a single HTML page. It is accessible through a local browser and the user data is established
+on a local JSON file using relative paths. After cloning the repository, open the index.html file and
+enjoy.
 
 ## Usage
 
@@ -26,11 +26,6 @@ foobar.pluralize('goose')
 foobar.singularize('phenomena')
 ```
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
 
@@ -38,10 +33,11 @@ Please make sure to update tests as appropriate.
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
+A list describing some of the operations of, ideas used and motivations for this SPA.
 
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
+- The first main motivation I had required spending some time researching API's to find the right one that I wanted to use. The JokeAPI was chosen because it fit the criteria of complexity I wanted for my project. The use of several filters for the joke search provided the right technical difficulty needed to build requests that I was aiming for.
+- The use of a JSON server is the second motivation. I wanted to include all the HTTP verbs in this assignment which required a local server. Users are able to interact with a local server to delete, create, change and retrieve data.
+- This SPA uses all of the information I've recently learned in Phase 1 and bringing it all together on an interactive page was the best learning experience so far.
 - What problem does it solve?
 - What did you learn?
 
