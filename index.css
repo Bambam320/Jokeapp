@@ -9,8 +9,22 @@ u {
     font-style: bold
 }
 
+.joke-card {
+    background-color: #F9F5AF;
+    text-align: left;
+    border-style: dashed;
+    border-color: #a86232;
+    border-width: 5px;
+    padding: 1rem;
+    max-width: 900px;
+    min-height: 5rem;
+    display: inline-block;
+    margin: .5rem 0rem;
+}
+
+.listing h2,p {background-color:inherit;}
+
 .listing {
-    background-color: wheat;
     position: absolute;
     top: 80px;
     left: 220px;
@@ -34,7 +48,7 @@ u {
 
 .search-bar {
     background-color: #f2fa82;
-    width: 900px;
+    width: 750px;
     height: 55px;
     position: absolute;
     padding-top: 6px;

@@ -9,32 +9,34 @@
 <body>
     <form class="search-bar">
         <label for="search-bar"> Search Bar</label><br>
-        <input size ="110" type="text" placeholder="Search for a joke with specific wording!"></input>
+        <input size ="75" type="text" placeholder="Search for a joke with specific wording!"></input>
         <input id="word-search" type="button" value = "Search"></input>
     </form>
     <form class = "left-form"> 
         <h2>Get Ready To Laugh! <br> Shmaybe...</h2>
         <u> Select Category </u><br>
         <div class="selection">
-            <input type="checkbox" id="programmingctg"></input>
+            <input name="category" type="checkbox" id="Programming"></input>
             <label for="programmingctg"> Programming </label><br>
-            <input type="checkbox" id="punctg"></input>
+            <input name="category" type="checkbox" id="Pun"></input>
             <label for="punctg"> Puns </label><br>
-            <input type="checkbox" id="miscellaneousctg"></input>
+            <input name="category" type="checkbox" id="Miscellaneous"></input>
             <label for="miscellaneousctg"> Miscellaneous </label><br>
-            <input type="checkbox" id="Spookyctg"></input>
+            <input name="category" type="checkbox" id="Spooky"></input>
             <label for="Spookyctg"> Spooky </label><br>
-            <input type="checkbox" id="darkctg"></input>
+            <input name="category" type="checkbox" id="Dark"></input>
             <label for="darkctg"> Dark </label><br>
-            <input type="checkbox" id="christmasctg"></input>
+            <input name="category" type="checkbox" id="Christmas"></input>
             <label for="christmasctg"> Christmas </label><br>
         </div><br>
         <u> Select Style </u><br>
         <div class="selection">
             <input name= "style" type="radio" id="singlestyle"></input>
-            <label for="singlestyle"> Without a Reply </label><br>
+            <label for="singlestyle"> Without Setup </label><br>
             <input name= "style" type="radio" id="doublestyle"></input>
-            <label for="doublestyle"> With a Reply </label><br>
+            <label for="doublestyle"> With Setup </label><br>
+            <input checked name= "style" type="radio" id="bothstyle"></input>
+            <label for="bothstyle"> Include Both </label><br>
         </div><br>
         <u> Select Flags To Omit</u><br>
         <div class="selection">
@@ -63,8 +65,21 @@
         </select><br><br>
         <button id="main-search"> Submit Search </button>
     </form>
-    <div class='listing'>
-        
+    <div class='listing'> 
+      <span class='joke-card'>
+        <h3> "What are bits?" </h3>
+        <p> "He keeps dropping the database." </p>
+        <p> "Programming" </p>
+        <button> Save This Joke! </button> 
+        <button> Delete this joke </button>
+      </span>
+        <span class='joke-card'>
+          <h2> "Why does no one like SQLrillex?" </h2>
+          <p> "Tiny things left when you drop your computer down the stairs." </p>
+          <p> "Programming" </p>
+          <button> Save This Joke! </button> 
+          <button> Delete this joke </button>
+        </span>
     </div>
  
   </body>
