@@ -22,6 +22,19 @@ u {
     margin: .5rem 0rem;
 }
 
+.joke-card b {
+    display: block;
+    margin-bottom: .25rem;
+}
+
+.joke-card p {
+    padding-left: 40px;
+}
+
+.joke-card button {
+    margin: 10px;
+}
+
 .listing h2,p {background-color:inherit;}
 
 .listing {
@@ -33,10 +46,25 @@ u {
 .left-form{
     background-color: #f2fa82;
     width: 200px;
-    height: 1200px;
+    /* height: 1200px; */
     position: relative;
     text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.left-form button {
+    float: inherit;
+    margin-bottom: 1rem;
+}
+
+.search input{
+    float: inherit;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.search input:hover {
+    width: 600px;
 }
 
 .selection {
@@ -48,9 +76,9 @@ u {
 
 .search-bar {
     background-color: #f2fa82;
-    width: 750px;
+    width: 600px;
     height: 55px;
-    position: absolute;
+    /* position: absolute; */
     padding-top: 6px;
     padding-left: 10px;
     left: 220px;

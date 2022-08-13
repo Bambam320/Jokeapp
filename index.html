@@ -7,11 +7,6 @@
     <script defer src="src/index.js"></script>  
   </head>
 <body>
-    <form class="search-bar">
-        <label for="search-bar"> Search Bar</label><br>
-        <input size ="75" type="text" placeholder="Search for a joke with specific wording!"></input>
-        <input id="word-search" type="button" value = "Search"></input>
-    </form>
     <form class = "left-form"> 
         <h2>Get Ready To Laugh! <br> Shmaybe...</h2>
         <u> Select Category </u><br>
@@ -40,17 +35,17 @@
         </div><br>
         <u> Select Flags To Omit</u><br>
         <div class="selection">
-            <input type="checkbox" id="religiousflag"></input>
+            <input name= "flags" type="checkbox" id="religious"></input>
             <label for="religiousflag"> Religious </label><br>
-            <input type="checkbox" id="politicalflag"></input>
+            <input name= "flags" type="checkbox" id="political"></input>
             <label for="politicalflag"> Political </label><br>
-            <input type="checkbox" id="racistflag"></input>
+            <input name= "flags" type="checkbox" id="racist"></input>
             <label for="racistflag"> Racist </label><br>
-            <input type="checkbox" id="sexistflag"></input>
+            <input name= "flags" type="checkbox" id="sexist"></input>
             <label for="sexistflag"> Sexist </label><br>
-            <input type="checkbox" id="explicitflag"></input>
+            <input name= "flags" type="checkbox" id="explicit"></input>
             <label for="explicitflag"> Explicit </label><br>
-            <input type="checkbox" id="nsfwflag"></input>
+            <input name= "flags" type="checkbox" id="nsfw"></input>
             <label for="nsfwflag"> NSFW </label><br>
         </div><br>
         <label for="jokeqty"> Quantity of Jokes </label>
@@ -62,24 +57,17 @@
           <option value="5">5</option>
           <option value="6">6</option>
           <option value="7">7</option>
-        </select><br><br>
+        </select><br>
+        <div class="search">
+        <input id = 'search-text' type="search" placeholder="Search for a joke with specific wording!"></input> <br>
+        </div>
         <button id="main-search"> Submit Search </button>
+        <br>
+        <button id="delete_all_jokes">Delete All Jokes!</button>
+        <br>
+        <button id="save_all_jokes">Save All Jokes!</button>
     </form>
     <div class='listing'> 
-      <span class='joke-card'>
-        <h3> "What are bits?" </h3>
-        <p> "He keeps dropping the database." </p>
-        <p> "Programming" </p>
-        <button> Save This Joke! </button> 
-        <button> Delete this joke </button>
-      </span>
-        <span class='joke-card'>
-          <h2> "Why does no one like SQLrillex?" </h2>
-          <p> "Tiny things left when you drop your computer down the stairs." </p>
-          <p> "Programming" </p>
-          <button> Save This Joke! </button> 
-          <button> Delete this joke </button>
-        </span>
     </div>
  
   </body>
