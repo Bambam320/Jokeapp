@@ -35,12 +35,14 @@ u {
     margin: 10px;
 }
 
-.listing h2,p {background-color:inherit;}
-
 .listing {
     position: absolute;
-    top: 80px;
+    top: 0px;
     left: 220px;
+}
+
+.listing h2, p {
+    background-color:inherit;
 }
 
 .left-form{
@@ -89,4 +91,26 @@ u {
 .form-input {
     background-color: #e7f5c6;
     margin: 10px;
+}
+
+.clear_before_submit {
+    float: inherit;
+    margin-bottom: 1rem;
+}
+
+.favorites button {
+    background-color: #a86232; /* Blue background */
+    border: none; /* Remove borders */
+    border-radius: 8px;
+    color: black; /* White text */
+    padding: 12px 16px; /* Some padding */
+    font-size: 16px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+    float: inherit;
+    margin-top: 1rem;
+}
+
+.favorites button:hover {
+    background-color: #499c5f;
+    
 }

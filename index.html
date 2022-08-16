@@ -53,7 +53,7 @@
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
-          <option value="4" >4</option>
+          <option value="4">4</option>
           <option value="5">5</option>
           <option value="6">6</option>
           <option value="7">7</option>
@@ -61,11 +61,20 @@
         <div class="search">
         <input id = 'search-text' type="search" placeholder="Search for a joke with specific wording!"></input> <br>
         </div>
-        <button id="main-search"> Submit Search </button>
+        <div class="clear_before_submit">
+          <input name= "clear_jokes" type="checkbox" id="clear_submit"></input>
+          <label for="clear_jokes"> Clear Current Jokes Before New Search </label><br>
+        </div>
+        <button id="main-search"> Submit Search! </button>
         <br>
-        <button id="delete_all_jokes">Delete All Jokes!</button>
+        <button id="remove_all_jokes">Remove All Jokes!</button>
         <br>
         <button id="save_all_jokes">Save All Jokes!</button>
+        <div class = 'favorites'>
+          <u>My Favorites</u> <br>
+          <button id="favorite_button">Favorites!</button>
+        </div>
+        <button id="delete_all_saved_jokes"> Empty Favorites Folder!</button>
     </form>
     <div class='listing'> 
     </div>
