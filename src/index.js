@@ -115,10 +115,10 @@ function jokeListBuilder(listing) {
     case listing.type === 'twopart' && listing.local === undefined:
     jokeContainer.append(setup, lineBreak, delivery, category, id, flags, saveButton, removeButton)
     break;
-    case listing.local === true && listing.type === 'single':
+    case listing.type === 'single' && listing.local === true:
     jokeContainer.append(joke, category, id, flags, saveButton, removeButton, deleteButton)
     break;
-    case listing.local === true && listing.type === 'twopart':
+    case listing.local === 'twopart' && listing.local === true:
     jokeContainer.append(setup, lineBreak, delivery, category, id, flags, saveButton, removeButton, deleteButton)
     break;
   }
@@ -145,7 +145,7 @@ function removeThisJoke(joke) {
 
 //deletes a joke from the local server
 function deleteThisJoke(joke) {
-  fetch(`http://localhost:3000/Favorites/${joke.target.parentElement.querySelector('.jokeID').id === true ? joke.target.parentElement.querySelector('.jokeID').id : joke.id}`, {method: 'DELETE'})
+  fetch(`http://localhost:3000/Favorites/${joke.target.parentElement.querySelector('.jokeID').id}`, {method: 'DELETE'})
   .then(res => res.json())
   .then(data => joke.target.parentElement.remove())
 }
@@ -163,8 +163,8 @@ function deleteAllJokes(jokes) {
   for (const joke of jokes) {
     fetch(`http://localhost:3000/Favorites/${joke.id}`, {method: 'DELETE'})
     .then(res => res.json())
-    .then(data => console.log(data))
   }
+  alert('All jokes have been deleted from the favorites folder!'))
 }
 
 //saves a joke to the favorites folder
@@ -185,8 +185,33 @@ function saveThisJoke(joke) {
   fetch(myJokesFolder, addJoke)
     .then(res => res.json())
     .then(data => (data))
-    .catch(error => alert(error))
+    .catch(error => alert('This joke has already been saved'))
 }
+
+//Saves all jokes to favorites folder
+document.querySelector('#save_all_jokes').addEventListener('click', (e) => {
+  e.preventDefault()
+  let jokeArray = document.getElementsByClassName('joke-card')
+  for (const joke of jokeArray) {
+    const myJokesFolder = 'http://localhost:3000/Favorites'
+    const addJoke = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        'joke_id': `${joke.querySelector('.jokeID').id}`,
+        'id' : `${joke.querySelector('.jokeID').id}`,
+        'joke': `${joke.querySelector('.cat').textContent.slice(11)}`,
+      })
+    }
+    fetch(myJokesFolder, addJoke)
+      .then(res => res.json())
+      .then(data => (data))
+      .catch(error => alert('This joke has already been saved'))
+  }
+})
 
 //Listen for favorites folder request and pass jokes to lister function
 document.querySelector('#favorite_button').addEventListener('click', (e) => {
@@ -199,10 +224,14 @@ document.querySelector('#favorite_button').addEventListener('click', (e) => {
 
 //iterate over the jokes on the local server and request each joke from the API then pass to function for modification
 function listFavorites(jokes) {
-  for (const joke of jokes) {
-    fetch(`https://v2.jokeapi.dev/joke/Any?idRange=${joke.joke_id}`)
-    .then(res => res.json())
-    .then(data => modifyAndPostListing(data))
+  if (jokes.length === 0) {
+    alert('No jokes are stored in the Favorites Folder')
+  } else {
+    for (const joke of jokes) {
+      fetch(`https://v2.jokeapi.dev/joke/Any?idRange=${joke.joke_id}`)
+      .then(res => res.json())
+      .then(data => modifyAndPostListing(data))
+    }  
   }
 }
 
@@ -211,10 +240,3 @@ function modifyAndPostListing(jokes) {
   jokes.local = true
   postListing(jokes)
 }
-
-
-
-//saves all jokes to the folder
-
-
-
