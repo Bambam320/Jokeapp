@@ -5,6 +5,15 @@ including category, style, flags, text and quantity. There is a search bar that 
 jokes that contain text that matches. The user can save their favorite jokes in a folder
 and the contents of the folder can be viewed or deleted or deleted.
 
+## Table of Contents
+
+If your README is long, add a table of contents to make it easy for users to find what they need.
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+- 
 ## Installation
 
 The app is a single HTML page. It is accessible through a local browser and the user data is established
@@ -13,6 +22,14 @@ enjoy.
 
 ## Usage
 
+Provide instructions and examples for use. Include screenshots as needed.
+
+To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+
+    ```md
+    ![alt text](assets/images/screenshot.png)
+    ```
+    
 ```python
 import foobar
 
@@ -26,11 +43,6 @@ foobar.pluralize('goose')
 foobar.singularize('phenomena')
 ```
 
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
-
-# <Joke Search App>
-
 ## Description
 
 A list describing some of the operations of, ideas used and motivations for this SPA.
@@ -41,18 +53,7 @@ A list describing some of the operations of, ideas used and motivations for this
 - What problem does it solve?
 - What did you learn?
 
-## Table of Contents (Optional)
 
-If your README is long, add a table of contents to make it easy for users to find what they need.
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
-
-## Installation
-
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
 
 ## Instructional GIF
 
@@ -61,16 +62,6 @@ What are the steps required to install your project? Provide a step-by-step desc
 
 ![Alt Text](https://media.giphy.com/media/Cei4BQea2ESoRs12PI/giphy.gif)
 ***Manipulating Favorites***
-
-## Usage
-
-Provide instructions and examples for use. Include screenshots as needed.
-
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
 
 ## Credits
 
