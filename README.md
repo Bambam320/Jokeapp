@@ -29,7 +29,7 @@ foobar.singularize('phenomena')
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
 
-# <Your-Project-Title>
+# <Joke Search App>
 
 ## Description
 
