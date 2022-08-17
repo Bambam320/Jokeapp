@@ -1,9 +1,9 @@
 # Joke Search App
 
 This is a single page application that allows the user to search for jokes based on several filters
-including category, style, flags and quantity. There is a search bar that takes keywords and returns
-jokes that contain text that matches. The user can save especially good jokes in a favorites folder
-and the contents of the folder can be filtered or deleted.
+including category, style, flags, text and quantity. There is a search bar that takes keywords and returns
+jokes that contain text that matches. The user can save their favorite jokes in a folder
+and the contents of the folder can be viewed or deleted or deleted.
 
 ## Installation
 
