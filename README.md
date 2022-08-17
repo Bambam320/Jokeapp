@@ -50,12 +50,11 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 
 ## Video Describing Functionality
 
-[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://youtu.be/THSd4kodg4E)
-
+[![Watch the video](https://i.imgur.com/tFpeM1l.png)](https://youtu.be/THSd4kodg4E)
 
 ## Credits
 
-https://sv443.net/jokeapi/v2/#info
+This project used a free API at [Joke API by sv443](https://sv443.net/jokeapi/v2/#info?target=_blank)
 
 ## License
 
