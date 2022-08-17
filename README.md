@@ -38,7 +38,9 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 - Some important concepts I learned during this project:
     - How to create a README file, there is alot involved with it and even has its own language.
     - How to break down something large into steps that are necessary for the process of building such an interactive SPA.
-    - How github
+    - How github is used to collect, display and store the projects files and information.
+    - Using the same 3 index files; .js, .css, .html to control everything a user interacts with on a website while sending and receiving information from many different sources.
+    - The JavaScript language offers so many options for writing the same thing that based on each application with the same function, the code can be written in vastly different ways. While writing this code, I was able to visualize different options for doing the same thing. This allowed me to understand DRY code from the writers perspective and not only the readers.
 
 ## Instructional GIF
 
@@ -54,7 +56,7 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 
 ## Credits
 
-This project used a free API at [Joke API by sv443](https://sv443.net/jokeapi/v2/#info?target=_blank)
+This project uses the free API from [Joke API by sv443](https://sv443.net/jokeapi/v2/#info?target=_blank)
 
 ## License
 
