@@ -82,7 +82,9 @@ If you followed tutorials, include links to those here as well.
 
 ## Features
 
-1. Search for jokes based on category, style, flags and quantities.
-2. Search for jokes based on text.
-3. Save jokes into a favorites folder.
-4. Filter or delete jokes in favorites folder.
+1. Search for jokes based on 6 categories, 2 styles, 6 flags, up to 7 quantities and any search term.
+2. Save an individual joke or all jokes into a favorites folder.
+3. Delete an individual joke or all jokes from the favorites folder.
+4. Remove an individual joke or all jokes from the page.
+5. Use the option to clear jokes on the page before loading favorites or searching for new jokes.
+6. Display jokes from favorites folder onto the page.
