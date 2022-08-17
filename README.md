@@ -35,10 +35,10 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 - The JokeAPI was chosen because it fit the criteria of complexity I wanted for this project as it is my first one. The use of several filters for the joke search provided the right technical difficulty I wanted to aim for.
 - The use of a JSON server is a challenge I decided to pursue because of the additional methods of deleting and posting I could use. I wanted to include some of the HTTP verbs in this assignment which required a local server. Users are able to interact with a local server to delete, create and display jokes.
 - This SPA uses all of the information I've recently learned in Phase 1 and bringing it all together on an interactive page was the best learning experience so far.
-- I learned a lot on this project:
+- Some important concepts I learned during this project:
     - How to create a README file, there is alot involved with it and even has its own language.
     - How to break down something large into steps that are necessary for the process of building such an interactive SPA.
-    - 
+    - How github
 
 ## Instructional GIF
 
@@ -58,7 +58,24 @@ This project used a free API at [Joke API by sv443](https://sv443.net/jokeapi/v2
 
 ## License
 
-![](LICENSE.txt)
+MIT License
+
+Copyright (c) 2022 Igor M.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+and associated documentation files (the "Software"), to deal in the Software without restriction,
+including without limitation the rights to use, copy, modify, merge, publish, distribute, 
+sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is 
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice (including the next paragraph) shall 
+be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING 
+BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, 
+DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Badges
 
