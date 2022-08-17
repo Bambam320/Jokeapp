@@ -20,9 +20,13 @@ The app is a single HTML page. It is accessible through a local browser and the 
 on a local JSON file using relative paths. After cloning the repository, open the index.html file and
 enjoy.
 
+Clone the repo [from Github here](https://github.com/Bambam320/phase-1-jokeapp-project)
+
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+The SPA's functions are described below with imagery and code to best describe their use.
+
+
 
 To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
 
@@ -56,7 +60,7 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 
 ## Credits
 
-This project uses the free API from [Joke API by sv443](https://sv443.net/jokeapi/v2/#info?target=_blank)
+This project uses the free API from [Joke API by sv443](https://sv443.net/jokeapi/v2/#info)
 
 ## License
 
