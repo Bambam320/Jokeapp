@@ -1,3 +1,64 @@
 {
-  "Favorites": []
+  "Favorites": [
+    {
+      "joke_id": "243",
+      "id": "243",
+      "joke": "Christmas"
+    },
+    {
+      "joke_id": "251",
+      "id": "251",
+      "joke": "Christmas"
+    },
+    {
+      "joke_id": "246",
+      "id": "246",
+      "joke": "Christmas"
+    },
+    {
+      "joke_id": "241",
+      "id": "241",
+      "joke": "Christmas"
+    },
+    {
+      "joke_id": "253",
+      "id": "253",
+      "joke": "Christmas"
+    },
+    {
+      "joke_id": "293",
+      "id": "293",
+      "joke": "Christmas"
+    },
+    {
+      "joke_id": "245",
+      "id": "245",
+      "joke": "Christmas"
+    },
+    {
+      "joke_id": "74",
+      "id": "74",
+      "joke": "Pun"
+    },
+    {
+      "joke_id": "272",
+      "id": "272",
+      "joke": "Misc"
+    },
+    {
+      "joke_id": "302",
+      "id": "302",
+      "joke": "Pun"
+    },
+    {
+      "joke_id": "155",
+      "id": "155",
+      "joke": "Pun"
+    },
+    {
+      "joke_id": "67",
+      "id": "67",
+      "joke": "Pun"
+    }
+  ]
 }

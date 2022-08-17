@@ -19,7 +19,7 @@ u {
     max-width: 900px;
     min-height: 5rem;
     display: inline-block;
-    margin: .5rem 0rem;
+    margin: .5rem .5rem;
 }
 
 .joke-card b {

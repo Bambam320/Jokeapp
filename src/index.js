@@ -1,7 +1,7 @@
 //event listener for search, builds URL for fetch based on selection
 document.querySelector('#main-search').addEventListener('click', (e) => {
   e.preventDefault()
-  //clear jokes before displaying new ones
+  //clear jokes before displaying new ones based on user selection
   if (document.getElementById('clear_submit').checked === true) {
     removeAll()
   }
@@ -36,14 +36,14 @@ document.querySelector('#main-search').addEventListener('click', (e) => {
   const searchField = `contains=${searchText.replace(/ /g, '%20')}&`
   const amount = `amount=${e.target.parentElement.childNodes[23].value}`
   //fetching the jokes from the api by interpolating the variables for joke selection
-  console.log(`${jokeServer}${category() === '' ? 'Any?' : category()}${flags()}${style()}${searchText != '' ? searchField : ''}${amount}`)
+  // console.log(`${jokeServer}${category() === '' ? 'Any?' : category()}${flags()}${style()}${searchText != '' ? searchField : ''}${amount}`)
   fetch(`${jokeServer}${category() === '' ? 'Any?' : category()}${flags()}${style()}${searchText != '' ? searchField : ''}${amount}`)
     .then(res => res.json())
     .then(data => amount.charAt(7) === '1' ? postListing(data) : postListings(data.jokes))
     .catch(error => alert(error.message))
 })
 
-//posts a single listing to the page
+//posts a single listing to the page or returns an error when no matching jokes are found
 function postListing(listing) {
   if (listing.error === true) {
     return alert('No Matching Jokes Found')
@@ -52,7 +52,7 @@ function postListing(listing) {
   }
 }
 
-//posts multiple listings to the page
+//posts multiple listings to the page by iterating over the listing array or returns an error when no jokes are found
 function postListings(listings) {
   if (listings === undefined) {
     return alert('No Matching Jokes Found')
@@ -95,6 +95,7 @@ function jokeListBuilder(listing) {
   id.id = listing.id
   id.className = 'jokeID'
   saveButton.textContent = 'Save This Joke!'
+  saveButton.id = 'save_button'
   saveButton.addEventListener('click', (e) => {
     saveThisJoke(e)
   })
@@ -110,16 +111,16 @@ function jokeListBuilder(listing) {
   jokeList.appendChild(jokeContainer)
   switch(true) {
     case listing.type === 'single' && listing.local === undefined:
-    jokeContainer.append(joke, category, id, flags, saveButton, removeButton)
+      jokeContainer.append(joke, category, id, flags, saveButton, removeButton)
     break;
     case listing.type === 'twopart' && listing.local === undefined:
-    jokeContainer.append(setup, lineBreak, delivery, category, id, flags, saveButton, removeButton)
+      jokeContainer.append(setup, lineBreak, delivery, category, id, flags, saveButton, removeButton)
     break;
     case listing.type === 'single' && listing.local === true:
-    jokeContainer.append(joke, category, id, flags, saveButton, removeButton, deleteButton)
+      jokeContainer.append(joke, category, id, flags, saveButton, removeButton, deleteButton)
     break;
-    case listing.local === 'twopart' && listing.local === true:
-    jokeContainer.append(setup, lineBreak, delivery, category, id, flags, saveButton, removeButton, deleteButton)
+    case listing.type === 'twopart' && listing.local === true:
+      jokeContainer.append(setup, lineBreak, delivery, category, id, flags, saveButton, removeButton, deleteButton)
     break;
   }
 }
@@ -164,7 +165,7 @@ function deleteAllJokes(jokes) {
     fetch(`http://localhost:3000/Favorites/${joke.id}`, {method: 'DELETE'})
     .then(res => res.json())
   }
-  alert('All jokes have been deleted from the favorites folder!'))
+  alert('All jokes have been deleted from the favorites folder!')
 }
 
 //saves a joke to the favorites folder
@@ -184,38 +185,38 @@ function saveThisJoke(joke) {
   }
   fetch(myJokesFolder, addJoke)
     .then(res => res.json())
-    .then(data => (data))
+    .then(data => alert(`Joke id : ${data.id} has been saved to favorites!`))
     .catch(error => alert('This joke has already been saved'))
 }
 
 //Saves all jokes to favorites folder
 document.querySelector('#save_all_jokes').addEventListener('click', (e) => {
   e.preventDefault()
-  let jokeArray = document.getElementsByClassName('joke-card')
-  for (const joke of jokeArray) {
-    const myJokesFolder = 'http://localhost:3000/Favorites'
-    const addJoke = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-      },
-      body: JSON.stringify({
-        'joke_id': `${joke.querySelector('.jokeID').id}`,
-        'id' : `${joke.querySelector('.jokeID').id}`,
-        'joke': `${joke.querySelector('.cat').textContent.slice(11)}`,
-      })
-    }
-    fetch(myJokesFolder, addJoke)
-      .then(res => res.json())
-      .then(data => (data))
-      .catch(error => alert('This joke has already been saved'))
+  let jokeCollection = document.getElementsByClassName('joke-card')
+  if (jokeCollection.length === 0) {
+    alert('There are no jokes listed to be saved.')
+  } else {
+    fetch('http://localhost:3000/Favorites')
+    .then(res => res.json())
+    .then(data => {
+      for (const joke of jokeCollection) {
+        const found = data.find(ele => joke.querySelector('.jokeID').id === ele.id)
+        if (found === undefined) {
+          joke.querySelector('#save_button').click()
+        } else {
+          alert(`The joke with ID : ${joke.querySelector('.jokeID').id} has already been saved`)
+        }
+      }
+    })
   }
 })
 
 //Listen for favorites folder request and pass jokes to lister function
 document.querySelector('#favorite_button').addEventListener('click', (e) => {
   e.preventDefault()
+  if (document.getElementById('clear_submit_favorites').checked === true) {
+    removeAll()
+  }
   fetch('http://localhost:3000/Favorites')
     .then(res => res.json())
     .then(data => listFavorites(data))
@@ -235,7 +236,7 @@ function listFavorites(jokes) {
   }
 }
 
-//add a key value pair to the joke then pass to postListing function which will add a delete button because its a saved joke
+//add a key value pair to the joke for listing on the page with a special value which will add a delete button because its a saved joke
 function modifyAndPostListing(jokes) {
   jokes.local = true
   postListing(jokes)
