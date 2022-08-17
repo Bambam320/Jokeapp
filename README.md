@@ -29,31 +29,16 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
     ```md
     ![alt text](assets/images/screenshot.png)
     ```
-    
-```python
-import foobar
-
-# returns 'words'
-foobar.pluralize('word')
-
-# returns 'geese'
-foobar.pluralize('goose')
-
-# returns 'phenomenon'
-foobar.singularize('phenomena')
-```
 
 ## Description
 
-A list describing some of the operations of, ideas used and motivations for this SPA.
-
-- The first main motivation I had required spending some time researching API's to find the right one that I wanted to use. The JokeAPI was chosen because it fit the criteria of complexity I wanted for my project. The use of several filters for the joke search provided the right technical difficulty needed to build requests that I was aiming for.
-- The use of a JSON server is the second motivation. I wanted to include all the HTTP verbs in this assignment which required a local server. Users are able to interact with a local server to delete, create, change and retrieve data.
+- The JokeAPI was chosen because it fit the criteria of complexity I wanted for this project as it is my first one. The use of several filters for the joke search provided the right technical difficulty I wanted to aim for.
+- The use of a JSON server is a challenge I decided to pursue because of the additional methods of deleting and posting I could use. I wanted to include some of the HTTP verbs in this assignment which required a local server. Users are able to interact with a local server to delete, create and display jokes.
 - This SPA uses all of the information I've recently learned in Phase 1 and bringing it all together on an interactive page was the best learning experience so far.
-- What problem does it solve?
-- What did you learn?
-
-
+- I learned a lot on this project:
+    - How to create a README file, there is alot involved with it and even has its own language.
+    - How to break down something large into steps that are necessary for the process of building such an interactive SPA.
+    - 
 
 ## Instructional GIF
 
@@ -62,6 +47,11 @@ A list describing some of the operations of, ideas used and motivations for this
 
 ![Alt Text](https://media.giphy.com/media/Cei4BQea2ESoRs12PI/giphy.gif)
 ***Manipulating Favorites***
+
+## Video Describing Functionality
+
+[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://youtu.be/THSd4kodg4E)
+
 
 ## Credits
 
@@ -73,7 +63,7 @@ https://sv443.net/jokeapi/v2/#info
 
 ## Badges
 
-![](https://img.shields.io/github/commit-activity/w/Bambam320/phase-1-github-search-app)
+![](https://img.shields.io/github/commit-activity/w/Bambam320/phase-1-jokeapp-project)
 
 ## Features
 
