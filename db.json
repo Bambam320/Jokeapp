@@ -1,64 +1,74 @@
 {
   "Favorites": [
     {
-      "joke_id": "243",
-      "id": "243",
-      "joke": "Christmas"
-    },
-    {
-      "joke_id": "251",
-      "id": "251",
-      "joke": "Christmas"
-    },
-    {
-      "joke_id": "246",
-      "id": "246",
-      "joke": "Christmas"
-    },
-    {
-      "joke_id": "241",
-      "id": "241",
-      "joke": "Christmas"
-    },
-    {
-      "joke_id": "253",
-      "id": "253",
-      "joke": "Christmas"
-    },
-    {
-      "joke_id": "293",
-      "id": "293",
-      "joke": "Christmas"
-    },
-    {
-      "joke_id": "245",
-      "id": "245",
-      "joke": "Christmas"
-    },
-    {
-      "joke_id": "74",
-      "id": "74",
-      "joke": "Pun"
-    },
-    {
-      "joke_id": "272",
-      "id": "272",
+      "joke_id": "181",
+      "id": "181",
       "joke": "Misc"
     },
     {
-      "joke_id": "302",
-      "id": "302",
-      "joke": "Pun"
+      "joke_id": "223",
+      "id": "223",
+      "joke": "Misc"
     },
     {
-      "joke_id": "155",
-      "id": "155",
-      "joke": "Pun"
+      "joke_id": "113",
+      "id": "113",
+      "joke": "Dark"
     },
     {
-      "joke_id": "67",
-      "id": "67",
-      "joke": "Pun"
+      "joke_id": "260",
+      "id": "260",
+      "joke": "Programming"
+    },
+    {
+      "joke_id": "265",
+      "id": "265",
+      "joke": "Programming"
+    },
+    {
+      "joke_id": "193",
+      "id": "193",
+      "joke": "Programming"
+    },
+    {
+      "joke_id": "208",
+      "id": "208",
+      "joke": "Dark"
+    },
+    {
+      "joke_id": "178",
+      "id": "178",
+      "joke": "Dark"
+    },
+    {
+      "joke_id": "152",
+      "id": "152",
+      "joke": "Dark"
+    },
+    {
+      "joke_id": "138",
+      "id": "138",
+      "joke": "Dark"
+    },
+    {
+      "joke_id": "165",
+      "id": "165",
+      "joke": "Dark"
+    },
+    {
+      "joke_id": "237",
+      "id": "237",
+      "joke": "Dark"
+    },
+    {
+      "joke_id": "96",
+      "id": "96",
+      "joke": "Dark"
+    },
+    {
+      "joke_id": "114",
+      "id": "114",
+      "joke": "Misc"
     }
   ]
 }

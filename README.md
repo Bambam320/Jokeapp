@@ -54,6 +54,14 @@ If your README is long, add a table of contents to make it easy for users to fin
 
 What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
 
+## Instructional GIF
+
+![](https://media.giphy.com/media/iEVHoQiil5rvuyAF43/giphy.gif) 
+***Searching and Saving***
+
+![Alt Text](https://media.giphy.com/media/Cei4BQea2ESoRs12PI/giphy.gif)
+***Manipulating Favorites***
+
 ## Usage
 
 Provide instructions and examples for use. Include screenshots as needed.
@@ -66,11 +74,7 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
+https://sv443.net/jokeapi/v2/#info
 
 ## License
 
