@@ -24,9 +24,9 @@ Clone the repo [from Github here](https://github.com/Bambam320/phase-1-jokeapp-p
 
 ## Usage
 
-The SPA's functions are described below with imagery and code to best describe their use.
+The SPA's functions are described below with imagery and code to best demonstrate their use.
 
-
+![Joke Search Menu](images/Search menu.png)
 
 To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
 
@@ -51,7 +51,7 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 ![](https://media.giphy.com/media/iEVHoQiil5rvuyAF43/giphy.gif) 
 ***Searching and Saving***
 
-![Alt Text](https://media.giphy.com/media/Cei4BQea2ESoRs12PI/giphy.gif)
+![](https://media.giphy.com/media/Cei4BQea2ESoRs12PI/giphy.gif)
 ***Manipulating Favorites***
 
 ## Video Describing Functionality
