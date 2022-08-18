@@ -61,7 +61,6 @@ function postListing(listing) {
     jokeListBuilder(listing)
   }
 }
-
 function postListings(listings) {
   if (listings === undefined) {
     return alert('No Matching Jokes Found')
@@ -77,7 +76,7 @@ function postListings(listings) {
 
 ![](images/Joke_cards.png "Joke Cards")
 
-#### Each joke card is listed by the jokeListBuilder() function. You can find it in the index.js. The function is divided into 3 parts. The first part, creates elements that the joke card will use such as buttons and paragraphs. The second part, fills and changes the text contents, id's and classes of those elements created in the first part. The last part depicted below, is used to append the correct elements based on the joke type. Jokes retrieved from the local json server will include a delete button while jokes retrieved from the API will not include one. Jokes that are presented with a question and answer are considered two part jokes and require the extra text element.
+#### Each joke card is listed by the jokeListBuilder() function. You can find it in the index.js file. The function is divided into 3 parts. The first part, creates elements that the joke card will use such as buttons and paragraphs. The second part, fills and changes the text contents, id's and classes of those elements created in the first part. The last part depicted below, is used to append the correct elements based on the joke type. Jokes retrieved from the local json server will include a delete button while jokes retrieved from the API will not include one. Jokes that are presented with a question and answer are considered two part jokes and require the extra text element.
 
 ```js
 switch(true) {
@@ -96,9 +95,15 @@ switch(true) {
   }
 ```
 
-#### There are several functions between lines 128 and 169 which handle the removal and deletion of jokes from the SPA and the json server. They are straight forward and the function depicted below is used to delete all jokes from the local server.
+#### There are several functions between lines 128 and 169 of the index.js file which handle the removal and deletion of jokes from the SPA and the json server. They are straight forward and the function depicted below is used to delete all jokes from the local server. The event listener prevents refreshing of the page and fetches with a get method, the jokes from the local json server. It then passes the data from the server to the deleteAllJokes() function which iterates over each joke and uses the delete method on each one. Then it returns an alert letting the user know all jokes have been deleted.
 
 ```js
+document.querySelector('#delete_all_saved_jokes').addEventListener('click', (e) => {
+  e.preventDefault()
+  fetch('http://localhost:3000/Favorites')
+  .then(res => res.json())
+  .then(data => deleteAllJokes(data))
+})
 function deleteAllJokes(jokes) {
   for (const joke of jokes) {
     fetch(`http://localhost:3000/Favorites/${joke.id}`, {method: 'DELETE'})
@@ -108,6 +113,30 @@ function deleteAllJokes(jokes) {
 }
 ```
 
+#### The event listener below is used to save all jokes currently listed on the SPA to the local server. It retrieves all current jokes on the SPA and checks if there are any. If there are, a fetch API gets the current jokes saved in the local server and iterates over each joke on the SPA. For each joke, its ID is compared to all the id's on the server and if none are found, the save button of that joke has a click event simulated on it, passing it to a saveThisJoke() function with uses a fetch API with a post method to save jokes to the local server.
+
+```js
+document.querySelector('#save_all_jokes').addEventListener('click', (e) => {
+  e.preventDefault()
+  let jokeCollection = document.getElementsByClassName('joke-card')
+  if (jokeCollection.length === 0) {
+    alert('There are no jokes listed to be saved.')
+  } else {
+    fetch('http://localhost:3000/Favorites')
+    .then(res => res.json())
+    .then(data => {
+      for (const joke of jokeCollection) {
+        const found = data.find(ele => joke.querySelector('.jokeID').id === ele.id)
+        if (found === undefined) {
+          joke.querySelector('#save_button').click()
+        } else {
+          alert(`The joke with ID : ${joke.querySelector('.jokeID').id} has already been saved`)
+        }
+      }
+    })
+  }
+})
+```
 
 
 ## Description
