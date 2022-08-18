@@ -27,15 +27,18 @@ Clone the repo [from Github here](https://github.com/Bambam320/phase-1-jokeapp-p
 The SPA's functions are described below with imagery and code to best demonstrate their use.
 
 *** Joke Search Menu ***
+
 ![](images/Search_menu.png "Search Menu")
 
->  `const category = function() {
->    let categorySelections = Object.entries(document.getElementsByName('category'))
->    let selectedCategories = categorySelections.reduce(function(accum, val) {
->      return accum += val[1].checked === true ? `${val[1].id},` : ''
->    }, '')
->    return selectedCategories != '' ? `${selectedCategories.slice(0,-1)}?` : selectedCategories
->  }`
+```js
+const category = function() {
+    let categorySelections = Object.entries(document.getElementsByName('category'))
+    let selectedCategories = categorySelections.reduce(function(accum, val) {
+        return accum += val[1].checked === true ? `${val[1].id},` : ''
+    }, '')
+    return selectedCategories != '' ? `${selectedCategories.slice(0,-1)}?` : selectedCategories
+}
+```
 
 ## Description
 
