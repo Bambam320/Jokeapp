@@ -11,10 +11,14 @@ If your README is long, add a table of contents to make it easy for users to fin
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Installation](#Installation)
-- [Credits](#credits)
-- [License](#license)
-- 
+- [Description](#Description)
+- [Instructional-GIF](#Instructional GIF)
+- [Video-Describing-Functionality](#Video Describing Functionality)
+- [Credits](#Credits)
+- [License](#License)
+- [Badges](#Badges)
+- [Features](#Features)
+
 ## Installation
 
 The app is a single HTML page. It is accessible through a local browser and the user data is established
