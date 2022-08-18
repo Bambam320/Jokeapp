@@ -95,9 +95,9 @@ switch(true) {
   }
 ```
 
-#### There are several functions between lines 128 and 169 of the index.js file which handle the removal and deletion of jokes from the SPA and the json server. They are straight forward and the function depicted below is used to delete all jokes from the local server. The event listener prevents refreshing of the page and fetches with a get method, the jokes from the local json server. It then passes the data from the server to the deleteAllJokes() function which iterates over each joke and uses the delete method on each one. Then it returns an alert letting the user know all jokes have been deleted.
-
 ![](images/Favorite_buttons.png "Action Buttons")
+
+#### There are several functions between lines 128 and 169 of the index.js file which handle the removal and deletion of jokes from the SPA and the json server. They are straight forward and the function depicted below is used to delete all jokes from the local server. The event listener prevents refreshing of the page and fetches with a get method, the jokes from the local json server. It then passes the data from the server to the deleteAllJokes() function which iterates over each joke and uses the delete method on each one. Then it returns an alert letting the user know all jokes have been deleted.
 
 ```js
 document.querySelector('#delete_all_saved_jokes').addEventListener('click', (e) => {
@@ -140,7 +140,21 @@ document.querySelector('#save_all_jokes').addEventListener('click', (e) => {
 })
 ```
 
-#### The favorites button
+#### The favorites button has an event listener attached to it. It fetches the jokes from the local server and passes that data to the listFavorites() function. It checks the length of data and determines if there are any jokes saved to the local server. If there are, it iterates over the joke id's stored on the local server and fetches each joke from the joke API and passes that joke to the modeifyAndPostListing() function which adds a key value pair to the joke and passes it back to the jokeListBuilder() function. That key adds a value which lets the function know it's a local joke and needs the button to delete it from the local server added to it's jokecard.
+
+```js
+function listFavorites(jokes) {
+  if (jokes.length === 0) {
+    alert('No jokes are stored in the Favorites Folder')
+  } else {
+    for (const joke of jokes) {
+      fetch(`https://v2.jokeapi.dev/joke/Any?idRange=${joke.joke_id}`)
+      .then(res => res.json())
+      .then(data => modifyAndPostListing(data))
+    }  
+  }
+}
+```
 
 ## Description
 
