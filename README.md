@@ -26,9 +26,16 @@ Clone the repo [from Github here](https://github.com/Bambam320/phase-1-jokeapp-p
 
 The SPA's functions are described below with imagery and code to best demonstrate their use.
 
-*** Joke Search Menu ***
+*Joke Search Menu*  
 
 ![](images/Search_menu.png "Search Menu")
+
+#### The anonymous function below is a small part of the code used to take the users selection.
+#### It searches for the list of check boxes with the class name of category and returns an array
+#### of those check boxes. That array is reduced by only those checkboxes that are checked and an
+#### array of strings for those selected categories is provided. The ternary operator at the bottom
+#### is used to replace the last comma with a question mark. See the next snippet of code for an 
+#### explanation of why that is.
 
 ```js
 const category = function() {
@@ -39,6 +46,25 @@ const category = function() {
     return selectedCategories != '' ? `${selectedCategories.slice(0,-1)}?` : selectedCategories
 }
 ```
+#### The fetch API uses string interpolation to grab the strings returned from the variables in the
+#### URL to build the correct address for requesting jokes. The data returned by the promise is then
+#### sent to a function for listing a single joke or several jokes.
+
+```js
+fetch(`${jokeServer}${category() === '' ? 'Any?' : category()}${flags()}${style()}${searchText != '' ? searchField : ''}${amount}`)
+    .then(res => res.json())
+    .then(data => amount.charAt(7) === '1' ? postListing(data) : postListings(data.jokes))
+    .catch(error => alert(error.message))
+```
+#### The fetch API uses string interpolation to grab the strings returned from the variables in the
+#### URL to build the correct address for requesting jokes. The data returned by the promise is then
+#### sent to a function for listing a single joke or several jokes.
+
+
+
+
+
+
 
 ## Description
 
