@@ -173,7 +173,7 @@ function listFavorites(jokes) {
     - Using the same 3 index files; .js, .css, .html to control everything a user interacts with on a website while sending and receiving information from many different sources.
     - The JavaScript language offers so many options for writing the same thing that based on each application with the same function, the code can be written in vastly different ways. While writing this code, I was able to visualize different options for doing the same thing. This allowed me to understand DRY code from the writers perspective and not only the readers.
 
-## Instructional GIF
+## Instructional-GIF
 
 ![](https://media.giphy.com/media/iEVHoQiil5rvuyAF43/giphy.gif) 
 
@@ -183,7 +183,7 @@ function listFavorites(jokes) {
 
 ***Manipulating Favorites***
 
-## Video Describing Functionality
+## Video-Describing-Functionality
 
 [![Watch the video](https://i.imgur.com/tFpeM1l.png)](https://youtu.be/THSd4kodg4E)
 
