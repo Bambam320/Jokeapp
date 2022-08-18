@@ -29,8 +29,12 @@ and the contents of the folder can be viewed or deleted or deleted.
 ## Installation
 
 The app is a single HTML page. It is accessible through a local browser and the user data is established
-on a local JSON file using relative paths. After cloning the repository, open the index.html file and
-enjoy.
+on a local JSON file using relative paths. The JSON server will need to be run using 
+```js
+json-server --watch db.json 
+```
+from the terminal in order to use it through the SPA. After cloning the repository, open the 
+index.html file and enjoy.
 
 Clone the repo [from Github here](https://github.com/Bambam320/phase-1-jokeapp-project)
 
