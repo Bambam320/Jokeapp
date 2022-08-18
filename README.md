@@ -97,6 +97,8 @@ switch(true) {
 
 #### There are several functions between lines 128 and 169 of the index.js file which handle the removal and deletion of jokes from the SPA and the json server. They are straight forward and the function depicted below is used to delete all jokes from the local server. The event listener prevents refreshing of the page and fetches with a get method, the jokes from the local json server. It then passes the data from the server to the deleteAllJokes() function which iterates over each joke and uses the delete method on each one. Then it returns an alert letting the user know all jokes have been deleted.
 
+![](images/Favorite_buttons.png "Action Buttons")
+
 ```js
 document.querySelector('#delete_all_saved_jokes').addEventListener('click', (e) => {
   e.preventDefault()
@@ -113,7 +115,7 @@ function deleteAllJokes(jokes) {
 }
 ```
 
-#### The event listener below is used to save all jokes currently listed on the SPA to the local server. It retrieves all current jokes on the SPA and checks if there are any. If there are, a fetch API gets the current jokes saved in the local server and iterates over each joke on the SPA. For each joke, its ID is compared to all the id's on the server and if none are found, the save button of that joke has a click event simulated on it, passing it to a saveThisJoke() function with uses a fetch API with a post method to save jokes to the local server.
+#### The event listener below is used to save all jokes currently listed on the SPA to the local server. It retrieves all current jokes on the SPA and checks if there are any. If there are, a fetch API gets the current jokes saved in the local server and iterates over each joke on the SPA. For each joke, its ID is compared to all the id's on the server and if none are found, the save button of that joke has a click event simulated on it, passing it to a saveThisJoke() function which uses a fetch API with a post method to save jokes to the local server.
 
 ```js
 document.querySelector('#save_all_jokes').addEventListener('click', (e) => {
@@ -138,6 +140,7 @@ document.querySelector('#save_all_jokes').addEventListener('click', (e) => {
 })
 ```
 
+#### The favorites button
 
 ## Description
 
