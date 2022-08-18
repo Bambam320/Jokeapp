@@ -7,8 +7,7 @@ and the contents of the folder can be viewed or deleted or deleted.
 
 ## Table of Contents
 
-If your README is long, add a table of contents to make it easy for users to find what they need.
-
+- [Features](#Features)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Description](#Description)
@@ -17,7 +16,15 @@ If your README is long, add a table of contents to make it easy for users to fin
 - [Credits](#Credits)
 - [License](#License)
 - [Badges](#Badges)
-- [Features](#Features)
+
+## Features
+
+1. Search for jokes based on 6 categories, 2 styles, 6 flags, up to 7 quantities and any search term.
+2. Save an individual joke or all jokes into a favorites folder.
+3. Delete an individual joke or all jokes from the favorites folder.
+4. Remove an individual joke or all jokes from the page.
+5. Use the option to clear jokes on the page before loading favorites or searching for new jokes.
+6. Display jokes from favorites folder onto the page.
 
 ## Installation
 
@@ -216,11 +223,3 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
 
 ![](https://img.shields.io/github/commit-activity/w/Bambam320/phase-1-jokeapp-project)
 
-## Features
-
-1. Search for jokes based on 6 categories, 2 styles, 6 flags, up to 7 quantities and any search term.
-2. Save an individual joke or all jokes into a favorites folder.
-3. Delete an individual joke or all jokes from the favorites folder.
-4. Remove an individual joke or all jokes from the page.
-5. Use the option to clear jokes on the page before loading favorites or searching for new jokes.
-6. Display jokes from favorites folder onto the page.
