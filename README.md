@@ -26,16 +26,11 @@ Clone the repo [from Github here](https://github.com/Bambam320/phase-1-jokeapp-p
 
 The SPA's functions are described below with imagery and code to best demonstrate their use.
 
-*Joke Search Menu*  
+**Joke Search Menu**  
 
 ![](images/Search_menu.png "Search Menu")
 
-#### The anonymous function below is a small part of the code used to take the users selection.
-#### It searches for the list of check boxes with the class name of category and returns an array
-#### of those check boxes. That array is reduced by only those checkboxes that are checked and an
-#### array of strings for those selected categories is provided. The ternary operator at the bottom
-#### is used to replace the last comma with a question mark. See the next snippet of code for an 
-#### explanation of why that is.
+#### The anonymous function below is a small part of the code used to take the users selection. It searches for the list of check boxes with the class name of category and returns an array of those check boxes. That array is reduced by only those checkboxes that are checked and an array of strings for those selected categories is provided. The ternary operator at the bottom is used to replace the last comma with a question mark. See the next snippet of code for an explanation of why that is.
 
 ```js
 const category = function() {
@@ -46,9 +41,8 @@ const category = function() {
     return selectedCategories != '' ? `${selectedCategories.slice(0,-1)}?` : selectedCategories
 }
 ```
-#### The fetch API uses string interpolation to grab the strings returned from the variables in the
-#### URL to build the correct address for requesting jokes. The data returned by the promise is then
-#### sent to a function for listing a single joke or several jokes.
+
+#### The fetch API uses string interpolation to grab the strings returned from the variables for category, style etc. in the URL to build the correct address for requesting jokes. The data returned by the promise is then sent to a function for listing a single joke or several jokes.
 
 ```js
 fetch(`${jokeServer}${category() === '' ? 'Any?' : category()}${flags()}${style()}${searchText != '' ? searchField : ''}${amount}`)
@@ -56,13 +50,63 @@ fetch(`${jokeServer}${category() === '' ? 'Any?' : category()}${flags()}${style(
     .then(data => amount.charAt(7) === '1' ? postListing(data) : postListings(data.jokes))
     .catch(error => alert(error.message))
 ```
-#### The fetch API uses string interpolation to grab the strings returned from the variables in the
-#### URL to build the correct address for requesting jokes. The data returned by the promise is then
-#### sent to a function for listing a single joke or several jokes.
 
+#### The necessity for two separate functions for listing jokes comes from the failure case in which no valid jokes are returned. In a single joke search, the key ERROR's value is true. However, in a multiple joke search, the array that is expected is actually undefined. Both functions funnel to the jokeListBuilder() function.
 
+```js
+function postListing(listing) {
+  if (listing.error === true) {
+    return alert('No Matching Jokes Found')
+  } else if(listing.error === false || listing.id != NaN) {
+    jokeListBuilder(listing)
+  }
+}
 
+function postListings(listings) {
+  if (listings === undefined) {
+    return alert('No Matching Jokes Found')
+  } else {
+    for (const listing of listings) {
+      postListing(listing)
+    }
+  }
+}
+```
 
+*Joke Search Menu*  
+
+![](images/Joke_cards.png "Joke Cards")
+
+#### Each joke card is listed by the jokeListBuilder() function. You can find it in the index.js. The function is divided into 3 parts. The first part, creates elements that the joke card will use such as buttons and paragraphs. The second part, fills and changes the text contents, id's and classes of those elements created in the first part. The last part depicted below, is used to append the correct elements based on the joke type. Jokes retrieved from the local json server will include a delete button while jokes retrieved from the API will not include one. Jokes that are presented with a question and answer are considered two part jokes and require the extra text element.
+
+```js
+switch(true) {
+    case listing.type === 'single' && listing.local === undefined:
+      jokeContainer.append(joke, category, id, flags, saveButton, removeButton)
+    break;
+    case listing.type === 'twopart' && listing.local === undefined:
+      jokeContainer.append(setup, lineBreak, delivery, category, id, flags, saveButton, removeButton)
+    break;
+    case listing.type === 'single' && listing.local === true:
+      jokeContainer.append(joke, category, id, flags, saveButton, removeButton, deleteButton)
+    break;
+    case listing.type === 'twopart' && listing.local === true:
+      jokeContainer.append(setup, lineBreak, delivery, category, id, flags, saveButton, removeButton, deleteButton)
+    break;
+  }
+```
+
+#### There are several functions between lines 128 and 169 which handle the removal and deletion of jokes from the SPA and the json server. They are straight forward and the function depicted below is used to delete all jokes from the local server.
+
+```js
+function deleteAllJokes(jokes) {
+  for (const joke of jokes) {
+    fetch(`http://localhost:3000/Favorites/${joke.id}`, {method: 'DELETE'})
+    .then(res => res.json())
+  }
+  alert('All jokes have been deleted from the favorites folder!')
+}
+```
 
 
 
